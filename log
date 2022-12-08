@@ -1,0 +1,78 @@
+Script started on 2022-12-08 00:23:56+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;ibhutoria@instance-1f: ~/Project3_CT_blue[01;32mibhutoria@instance-1f[00m:[01;34m~/Project3_CT_blue[00m$ git status
+[?2004lOn branch AlgorithmEngineer
+Your branch is up to date with 'origin/AlgorithmEngineer'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mdeleted:    AlgorithmEngineerTests.class[m
+	[31mdeleted:    FlightTicketADT.class[m
+	[31mdeleted:    FlightTicketGraph$EPath.class[m
+	[31mdeleted:    FlightTicketGraph$Edge.class[m
+	[31mdeleted:    FlightTicketGraph$Path.class[m
+	[31mdeleted:    FlightTicketGraph$Vertex.class[m
+	[31mdeleted:    FlightTicketGraph.class[m
+	[31mdeleted:    GraphADT.java[m
+	[31mdeleted:    ITicket.class[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mlog[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ibhutoria@instance-1f: ~/Project3_CT_blue[01;32mibhutoria@instance-1f[00m:[01;34m~/Project3_CT_blue[00m$ git log -1
+[?2004l[?1h=[33mcommit d8adb4bd6a3e3314020f3c9990dc50a82e458cd5[m[33m ([m[1;36mHEAD -> [m[1;32mAlgorithmEngineer[m[33m, [m[1;31morigin/AlgorithmEngineer[m[33m)[m[m
+Author: Ishan Bhutoria <ibhutoria@wisc.edu>[m
+Date:   Thu Dec 8 00:22:48 2022 +0000[m
+[m
+    Added all Algo files[m
+[K[?1l>[?2004h]0;ibhutoria@instance-1f: ~/Project3_CT_blue[01;32mibhutoria@instance-1f[00m:[01;34m~/Project3_CT_blue[00m$ make clean
+[?2004lrm *.class
+rm: cannot remove '*.class': No such file or directory
+make: *** [Makefile:9: clean] Error 1
+[?2004h]0;ibhutoria@instance-1f: ~/Project3_CT_blue[01;32mibhutoria@instance-1f[00m:[01;34m~/Project3_CT_blue[00m$ ls
+[?2004l1                            FlightTicketGraph.java  ITicketBackend.java   Makefile
+AlgorithmEngineerTests.java  IFDTicket.java          ITicketFrontEnd.java  [0m[01;31mjunit5.jar[0m
+FlightTicketADT.java         ITicket.java            ITicketLoader.java    log
+[?2004h]0;ibhutoria@instance-1f: ~/Project3_CT_blue[01;32mibhutoria@instance-1f[00m:[01;34m~/Project3_CT_blue[00m$ make runTests
+[?2004ljavac FlightTicketGraph.java
+javac -cp .:junit5.jar AlgorithmEngineerTests.java
+java -jar junit5.jar --class-path=. --include-classname=.* --select-class=AlgorithmEngineerTests
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mAlgorithmEngineerTests[0m [32m✔[0m
+[36m│     ├─[0m [34mtestGetCheapestAndLeastTransferPathAndPathCostAustinToMadison()[0m [32m✔[0m
+[36m│     ├─[0m [34mtestCheapestPathAndLeastTransferPathWithInvalidInput()[0m [32m✔[0m
+[36m│     ├─[0m [34mtestGetCheapestPathAndTransferPathAndPathCostMadisonToBoston()[0m [32m✔[0m
+[36m│     ├─[0m [34mtestGetCheapestAndLeastTransferPathAndPathCostMadisonToChicago()[0m [32m✔[0m
+[36m│     └─[0m [34mtestGetCheapestAndLeastTransferPathAndPathCostMadisonToMiami()[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 164 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         5 tests found           ]
+[         0 tests skipped         ]
+[         5 tests started         ]
+[         0 tests aborted         ]
+[         5 tests successful      ]
+[         0 tests failed          ]
+
+[?2004h]0;ibhutoria@instance-1f: ~/Project3_CT_blue[01;32mibhutoria@instance-1f[00m:[01;34m~/Project3_CT_blue[00m$ exit[K[K[K[Kls
+[?2004l 1                             'FlightTicketGraph$EPath.class'    FlightTicketGraph.java   ITicketFrontEnd.java
+ AlgorithmEngineerTests.class  'FlightTicketGraph$Edge.class'     IFDTicket.java           ITicketLoader.java
+ AlgorithmEngineerTests.java   'FlightTicketGraph$Path.class'     ITicket.class            Makefile
+ FlightTicketADT.class         'FlightTicketGraph$Vertex.class'   ITicket.java             [0m[01;31mjunit5.jar[0m
+ FlightTicketADT.java           FlightTicketGraph.class           ITicketBackend.java      log
+[?2004h]0;ibhutoria@instance-1f: ~/Project3_CT_blue[01;32mibhutoria@instance-1f[00m:[01;34m~/Project3_CT_blue[00m$ exit
+[?2004lexit
+
+Script done on 2022-12-08 00:24:56+00:00 [COMMAND_EXIT_CODE="0"]
