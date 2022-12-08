@@ -19,6 +19,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -59,7 +60,15 @@ public class DataWranglerTests {
     // convert DOT to list for testing
     dotList = DOTToList("Dot.gv");
   }
-  
+ 
+  /**
+   * Deletes the test dot file after all the tests are finished
+   */
+  @AfterAll
+  public static void cleanup() {
+    dotFile.delete();
+  }
+
   /**
    * @param filepathToDot file path to the dot file
    * @return a list containing each line of the dot file
