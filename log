@@ -1,0 +1,68 @@
+Script started on 2022-12-08 05:08:19+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="77" LINES="36"]
+[?2004h]0;ychen877@lecture-demo: ~/cs400/week11/P3W1/Project3_CT_blue[01;32mychen877@lecture-demo[00m:[01;34m~/cs400/week11/P3W1/Project3_CT_blue[00m$ git status
+[?2004lOn branch BackendDeveloper
+Your branch is ahead of 'origin/BackendDeveloper' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mBackendDeveloperTest.class[m
+	[31mFlightTicketADT.class[m
+	[31mFlightTicketBD$Edge.class[m
+	[31mFlightTicketBD$Vertex.class[m
+	[31mFlightTicketBD.class[m
+	[31mITicket.class[m
+	[31mITicketBackend.class[m
+	[31mTicketBackend.class[m
+	[31mlog[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;ychen877@lecture-demo: ~/cs400/week11/P3W1/Project3_CT_blue[01;32mychen877@lecture-demo[00m:[01;34m~/cs400/week11/P3W1/Project3_CT_blue[00m$ git log -1
+[?2004l[?1h=[33mcommit 3ee2a406f7fc9e2ae39feb3a351a74d7945cf315[m[33m ([m[1;36mHEAD -> [m[1;32mBackendDeveloper[m[33m)[m[m
+Author: Yanbin Chen <ychen877@wisc.edu>[m
+Date:   Thu Dec 8 05:07:43 2022 +0000[m
+[m
+    Added makefile and junit5.jar[m
+[K[?1l>[?2004h]0;ychen877@lecture-demo: ~/cs400/week11/P3W1/Project3_CT_blue[01;32mychen877@lecture-demo[00m:[01;34m~/cs400/week11/P3W1/Project3_CT_blue[00m$ make clean
+[?2004lrm *.class
+[?2004h]0;ychen877@lecture-demo: ~/cs400/week11/P3W1/Project3_CT_blue[01;32mychen877@lecture-demo[00m:[01;34m~/cs400/week11/P3W1/Project3_CT_blue[00m$ ls
+[?2004lBackendDeveloperTest.java  ITicket.java         TicketBackend.java
+FlightTicketADT.java       ITicketBackend.java  [0m[01;31mjunit5.jar[0m
+FlightTicketBD.java        Makefile             log
+[?2004h]0;ychen877@lecture-demo: ~/cs400/week11/P3W1/Project3_CT_blue[01;32mychen877@lecture-demo[00m:[01;34m~/cs400/week11/P3W1/Project3_CT_blue[00m$ make runTests
+[?2004ljavac ITicketBackend.java
+javac TicketBackend.java
+javac FlightTicketBD.java
+javac -cp .:junit5.jar BackendDeveloperTest.java
+java -jar junit5.jar --class-path=. --include-classname=.* --select-class=BackendDeveloperTest
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mBackendDeveloperTest[0m [32m✔[0m
+[36m│     ├─[0m [34mtestSearchByDeparture()[0m [32m✔[0m
+[36m│     ├─[0m [34mtestPathFound()[0m [32m✔[0m
+[36m│     ├─[0m [34mtestGetLeastTransferPath()[0m [32m✔[0m
+[36m│     ├─[0m [34mtestSearchByDestination()[0m [32m✔[0m
+[36m│     └─[0m [34mtestGetCheapestPath()[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 159 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         5 tests found           ]
+[         0 tests skipped         ]
+[         5 tests started         ]
+[         0 tests aborted         ]
+[         5 tests successful      ]
+[         0 tests failed          ]
+
+[?2004h]0;ychen877@lecture-demo: ~/cs400/week11/P3W1/Project3_CT_blue[01;32mychen877@lecture-demo[00m:[01;34m~/cs400/week11/P3W1/Project3_CT_blue[00m$ exit
+[?2004lexit
+
+Script done on 2022-12-08 05:08:59+00:00 [COMMAND_EXIT_CODE="0"]
