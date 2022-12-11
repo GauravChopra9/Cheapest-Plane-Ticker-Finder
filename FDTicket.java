@@ -8,7 +8,7 @@
 /**
  * This class creates ticket objects that are used by the frontend developer
  */
-public class Ticket implements ITicket {
+public class FDTicket implements ITicket {
     // Attributes of the ticket objects
     String price;
     String destination;
@@ -18,7 +18,7 @@ public class Ticket implements ITicket {
     /**
      * Constructor which creates the ticket objects
      */
-    public Ticket(String price, String departure, String destination) {
+    public FDTicket(String price, String departure, String destination) {
         this.price = price;
         this.destination = destination;
         this.departure = departure;
