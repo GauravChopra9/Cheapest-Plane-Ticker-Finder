@@ -1,6 +1,6 @@
 default: runTests
 
-runTests: runBackendDeveloperTests runFrontendDeveloperTests runDataWranglerTests
+runTests: runBackendDeveloperTests runFrontendDeveloperTests runDataWranglerTests runAlgorithmEngineerTests
 
 runDataWranglerTests: DataWranglerTests.class 
 	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=DataWranglerTests
@@ -51,5 +51,13 @@ FDTicket.class: FDTicket.java
 	javac FDTicket.java
 TextUITester.class: TextUITester.java
 	javac TextUITester.java
+
+runAlgorithmEngineerTests: FlightTicketGraph.class
+	javac -cp .:junit5.jar AlgorithmEngineerTests.java
+	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=AlgorithmEngineerTests
+
+FlightTicketGraph.class: 
+	javac FlightTicketGraph.java
+
 clean:
 	rm *.class
