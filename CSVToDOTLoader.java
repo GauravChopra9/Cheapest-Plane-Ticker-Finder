@@ -6,6 +6,7 @@
 // Notes to Grader:
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class CSVToDOTLoader {
       printDOT(lines); // print out contents of list in DOT format
     } catch (IOException e) {
       // TODO Auto-generated catch block
-      e.printStackTrace();
+      // e.printStackTrace();
     }
     
   }
@@ -47,7 +48,7 @@ public class CSVToDOTLoader {
        
       }
     } catch (IOException e) { // throw exception if it can't find file
-      e.printStackTrace();
+      //e.printStackTrace();
     }
     return lines;
   }

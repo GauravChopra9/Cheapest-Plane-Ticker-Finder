@@ -129,7 +129,7 @@ public class DataWranglerTests {
     try {
       dotLoader.loadCSV("fakefile.csv");
     }
-    catch (IOException e) {
+    catch (NoSuchFileException e) {
       assertTrue(true);
     }
     // test correct size of loaded csv
