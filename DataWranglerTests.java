@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,13 @@ public class DataWranglerTests {
     System.setOut(o); // set output to file
     
     dotLoader = new CSVToDOTLoader();
-    csvList = dotLoader.loadCSV("Consumer_Airfare_Report__Table_1_-_Top_1_000_Contiguous_State_City-Pair_Markets.csv");
+    try {
+      csvList = dotLoader.loadCSV("Consumer_Airfare_Report__Table_1_-_Top_1_000_Contiguous_State_City-Pair_Markets.csv");
+    }
+    catch (IOException e) {
+      assertTrue(false);
+    }
+    
     CSVToDOTLoader.printDOT(csvList); // print out contents of list in DOT format
     
     // read from dot
@@ -117,12 +124,12 @@ public class DataWranglerTests {
    * @throws IOException 
    */
   @Test
-  public void test2() throws IOException {
+  public void test2() throws IOException{
     // test bad filepath
     try {
       dotLoader.loadCSV("fakefile.csv");
     }
-    catch (Exception e) {
+    catch (IOException e) {
       assertTrue(true);
     }
     // test correct size of loaded csv
@@ -199,3 +206,4 @@ public class DataWranglerTests {
   }
   
 }
+

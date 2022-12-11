@@ -19,8 +19,15 @@ public class CSVToDOTLoader {
   public static void main(String[] args) {
     // run this in the VM and use bash to redirect the output to a file
     CSVToDOTLoader loader = new CSVToDOTLoader();
-    List<String> lines = loader.loadCSV("Consumer_Airfare_Report__Table_1_-_Top_1_000_Contiguous_State_City-Pair_Markets.csv");
-    printDOT(lines); // print out contents of list in DOT format
+    List<String> lines;
+    try {
+      lines = loader.loadCSV("Consumer_Airfare_Report__Table_1_-_Top_1_000_Contiguous_State_City-Pair_Markets.csv");
+      printDOT(lines); // print out contents of list in DOT format
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    
   }
   
   /**
@@ -29,7 +36,7 @@ public class CSVToDOTLoader {
    * @param filepath for the csv
    * @return a list containing all the lines of the csv
    */
-  protected List<String> loadCSV(String filepath) {
+  protected List<String> loadCSV(String filepath) throws IOException{
     List<String> lines = new ArrayList<String>();
     try {
       try (// load csv data into stream
@@ -82,3 +89,4 @@ public class CSVToDOTLoader {
     System.out.println("}"); // ending bracket for the dot file
   }
 }
+

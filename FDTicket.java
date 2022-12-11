@@ -1,10 +1,3 @@
-// --== CS400 Project Two File Header ==--
-// Name: Gaurav Chopra
-// CSL Username: chopra
-// Email: gmchopra@wisc.edu
-// Lecture #: 002 @2:30pm
-// Notes to Grader: None
-
 /**
  * This class creates ticket objects that are used by the frontend developer
  */
@@ -47,5 +40,8 @@ public class FDTicket implements ITicket {
     public String getDeparture() {
         return this.departure;
     }
+  public String toString() {
+    return "[ Departure: " + this.getDeparture() + ", Destination: " + this.getDestination() + ", Price: " + this.getPrice() + " ]";
+  }
 }
 
