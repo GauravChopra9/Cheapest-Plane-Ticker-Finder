@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Script started on 2022-12-08 01:58:28+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="206" LINES="58"]
 git status
 git log -1
@@ -8,17 +9,24 @@ make runTests
 exit]0;dtcoe@instance-2: ~/Project3_CT_bluedtcoe@instance-2:~/Project3_CT_blue$ git status
 On branch main
 Your branch is up to date with 'origin/main'.
+=======
+Script started on 2022-12-09 04:25:17+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;Patron@instance-1: ~/Project3_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project3_CT_blue[00m$ git status
+[?2004lOn branch FrontendDeveloper
+Your branch is up to date with 'origin/FrontendDeveloper'.
+>>>>>>> FrontendDeveloper
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	[31mlog[m
 
 nothing added to commit but untracked files present (use "git add" to track)
-]0;dtcoe@instance-2: ~/Project3_CT_bluedtcoe@instance-2:~/Project3_CT_blue$ git log -1
-[?1h=[33mcommit 9e42f923a80d0cba23c14624d187a06c62b293fb[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m[m
-Author: Dylan Coe <dtcoe@wisc.edu>[m
-Date:   Thu Dec 8 01:54:04 2022 +0000[m
+[?2004h]0;Patron@instance-1: ~/Project3_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project3_CT_blue[00m$ git log -1
+[?2004l[?1h=[33mcommit a95eeb47b81c6f21bfba45635c65dc4d08cd0517[m[33m ([m[1;36mHEAD -> [m[1;32mFrontendDeveloper[m[33m, [m[1;31morig[m [33m[m[33m[m[1;36m[m[1;32m[m[33m[m[1;31min/FrontendDeveloper[m[33m)[m[m
+Author: Gaurav <gmchopra@wisc.edu>[m
+Date:   Fri Dec 9 04:24:34 2022 +0000[m
 [m
+<<<<<<< HEAD
     removing classes from branch[m
 [K[?1l>]0;dtcoe@instance-2: ~/Project3_CT_bluedtcoe@instance-2:~/Project3_CT_blue$ make clean
 rm *.class
@@ -152,13 +160,36 @@ javac FlightTicketBD.java
 javac -cp .:junit5.jar BackendDeveloperTest.java
 java -jar junit5.jar --class-path=. --include-classname=.* --select-class=BackendDeveloperTest
 >>>>>>> BackendDeveloper
+=======
+    Removed wrong log fike[m
+[K[?1l>[?2004h]0;Patron@instance-1: ~/Project3_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project3_CT_blue[00m$ makw[Ke clean
+[?2004lrm *.class
+[?2004h]0;Patron@instance-1: ~/Project3_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project3_CT_blue[00m$ ls
+[?2004lFrontendDeveloperTest.java  ITicketLoader.java    TicketFrontend.java
+GraphADT.java               Makefile              TicketLoaderFD.java
+ITicket.java                TextUITester.java     [0m[01;31mjunit5.jar[0m
+ITicketBackend.java         Ticket.java           log
+ITicketFrontEnd.java        TicketBackendFD.java
+[?2004h]0;Patron@instance-1: ~/Project3_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project3_CT_blue[00m$ make runTests
+[?2004ljavac Ticket.java
+javac TicketFrontend.java
+javac TicketBackendFD.java
+javac TicketLoaderFD.java
+javac TextUITester.java
+javac -cp .:junit5.jar FrontendDeveloperTest.java
+java -jar junit5.jar --class-path=. --include-classname=.* --select-class=FrontendDeveloperTest
+>>>>>>> FrontendDeveloper
 
 Thanks for using JUnit! Support its development at https://junit.org/sponsoring
 
 [36m╷[0m
 [36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
 <<<<<<< HEAD
+<<<<<<< HEAD
 [36m│  └─[0m [36mDataWranglerTests[0m [32m✔[0m
+=======
+[36m│  └─[0m [36mFrontendDeveloperTest[0m [32m✔[0m
+>>>>>>> FrontendDeveloper
 [36m│     ├─[0m [34mtest1()[0m [32m✔[0m
 [36m│     ├─[0m [34mtest2()[0m [32m✔[0m
 [36m│     ├─[0m [34mtest3()[0m [32m✔[0m
@@ -166,6 +197,7 @@ Thanks for using JUnit! Support its development at https://junit.org/sponsoring
 [36m│     └─[0m [34mtest5()[0m [32m✔[0m
 [36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
 
+<<<<<<< HEAD
 Test run finished after 3339 ms
 =======
 [36m│  └─[0m [36mBackendDeveloperTest[0m [32m✔[0m
@@ -178,6 +210,9 @@ Test run finished after 3339 ms
 
 Test run finished after 159 ms
 >>>>>>> BackendDeveloper
+=======
+Test run finished after 221 ms
+>>>>>>> FrontendDeveloper
 [         3 containers found      ]
 [         0 containers skipped    ]
 [         3 containers started    ]
@@ -192,6 +227,7 @@ Test run finished after 159 ms
 [         0 tests failed          ]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ]0;dtcoe@instance-2: ~/Project3_CT_bluedtcoe@instance-2:~/Project3_CT_blue$ exit
 exit
 
@@ -202,3 +238,9 @@ Script done on 2022-12-08 01:58:50+00:00 [COMMAND_EXIT_CODE="0"]
 
 Script done on 2022-12-08 05:08:59+00:00 [COMMAND_EXIT_CODE="0"]
 >>>>>>> BackendDeveloper
+=======
+[?2004h]0;Patron@instance-1: ~/Project3_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project3_CT_blue[00m$ exir[Kt
+[?2004lexit
+
+Script done on 2022-12-09 04:26:04+00:00 [COMMAND_EXIT_CODE="0"]
+>>>>>>> FrontendDeveloper

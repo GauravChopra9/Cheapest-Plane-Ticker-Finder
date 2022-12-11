@@ -1,6 +1,6 @@
 default: runTests
 
-runTests: runDataWranglerTests runBackendDeveloperTests
+runTests: runDataWranglerTests runBackendDeveloperTests runFrontendDeveloperTests
 
 runDataWranglerTests: DataWranglerTests.class 
 	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=DataWranglerTests
@@ -37,5 +37,17 @@ FlightTicketBD.class: FlightTicketBD.java FlightTicketADT.class
 FlightTicketADT.class: FlightTicketADT.java
 	javac FlightTicketADT.java
 
+runFrontendDeveloperTests: FrontendDeveloperTest.class
+	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=FrontendDeveloperTest
+FrontendDeveloperTest.class: FrontendDeveloperTest.java TicketFrontend.class TicketBackendFD.class TicketLoaderFD.class TextUITester.class Ticket.class
+	javac -cp .:junit5.jar FrontendDeveloperTest.java
+TicketFrontend.class: TicketFrontend.java Ticket.class
+	javac TicketFrontend.java
+TicketBackendFD.class: TicketBackendFD.java Ticket.class
+	javac TicketBackendFD.java
+TicketLoaderFD.class: TicketLoaderFD.java Ticket.class
+	javac TicketLoaderFD.java
+TextUITester.class: TextUITester.java
+	javac TextUITester.java
 clean:
 	rm *.class
