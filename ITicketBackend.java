@@ -2,26 +2,46 @@ import java.util.List;
 
 public interface ITicketBackend {
     /**
-     * Adds a new stop between the departure and destination to the Backend's 
-     * database and is stored in the graph
+     * Search through all the stops in the graph and return true if it has given departure
      * 
-     * @param stop the stop name to add
+     * @param departure departure of the journey
+     * @return true when the departure exists
      */
-    public boolean addStop(String stop);
+    public boolean searchByDeparture(String departure);
 
     /**
-     * Deletes a stop between the departure and destination from the graph.
+     * Search through all the stops in the graph and return true if it has given destination
      * 
-     * @param stop to remove
+     * @param destination destination of the journey
+     * @return true when the departure exists
      */
-    public boolean removeStop(String stop);
+    public boolean searchByDestination(String destination);
 
     /**
-     * Search through all the stops in the graph and return a list of tickets
-     * which have the lowest cost combined to reach the destination
+     * Search the graph and return true if it has the path from given departure 
+     * and destination
      * 
-     * @param dest destination of the journey
-     * @return list of tickets
+     * @param departure departure of the journey
+     * @param destination destination of the journey
+     * @return true if there is a path
      */
-    public List<ITicket> searchByDestination(String dest);
+    public boolean pathFound(String departure, String destination);
+
+    /**
+     * Search the graph and return the list of the paths which are cheapest top three
+     * 
+     * @param departure departure of the journey
+     * @param destination destination of the journey
+     * @return List List of Ticket for the cheapest path
+     */
+    public List<ITicket> getCheapestPath(String departure, String destination);
+
+    /**
+     * Search the graph and return the list of the paths which are cheapest top three
+     *
+     * @param departure departure of the journey
+     * @param destination destination of the journey
+     * @return List List of Ticket for the least transfer path
+     */
+    public List<ITicket> getLeastTransfer(String departure, String destination);
 }
