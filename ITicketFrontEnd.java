@@ -1,3 +1,12 @@
+// --== CS400 Project Two File Header ==--
+// Name: Gaurav Chopra
+// CSL Username: chopra
+// Email: gmchopra@wisc.edu
+// Lecture #: 002 @2:30pm
+// Notes to Grader: None
+
+import java.util.List;
+
 public interface ITicketFrontEnd {
 
     /**
@@ -24,20 +33,33 @@ public interface ITicketFrontEnd {
 
     /**
      * Displays a list of places
-     * @param ticket the ticket list
+     * @param ticket the ticket
      */
-    public void displayPlaces(IFDTicket ticket);
+    public String displayTicket(ITicket ticket);
 
     /**
-     * Displays a list of prices
-     * @param ticket the ticket list
+     * Prints all tickets
      */
-    public void displayPrices(IFDTicket ticket);
+    public void printAllTickets();
 
     /**
-     * Displays the cheapest path based on the inputted start and destination points
+     * Prints all locations
      */
-    public void cheapestPathSearch();
+    public void printAllLocations();
+
+    /**
+     * Checks if location is added, helper method for printAllLocations()
+     */
+    public boolean isAdded(List<String> locations, String location);
+
+    /**
+     * Prints cheapest path
+     */
+    public String printCheapestPath(String departure, String destination);
+
+    /**
+     * Prints path with least transfers
+     */
+    public String printLeastTransfer(String departure, String destination);
 }
-
 
