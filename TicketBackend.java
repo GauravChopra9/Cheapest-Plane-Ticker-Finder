@@ -3,10 +3,46 @@ import java.util.NoSuchElementException;
 
 public class TicketBackend implements ITicketBackend {
 
-	private FlightTicketADT graph;
+	private FlightTicketADT<String, Double> graph;
 	
-	public TicketBackend (FlightTicketADT graph) {
+	public TicketBackend (FlightTicketADT<String, Double> graph) {
 		this.graph = graph;
+	}
+//
+//	/**
+//     * Adds a new stop to the backend's database and is stored in the graph internally
+//     * 
+//     * @param stop the stop to add
+//     */
+//	@Override
+//	public void addStop(String stop) {
+//		try {
+//		    graph.insertVertex(stop);
+//		} catch (NullPointerException e) {
+//			// Do nothing
+//		}
+//	}
+
+	/**
+	 * Adds a new ticket to the backend's database and is stored in the graph internally
+	 * 
+	 * @param ticket the ticket to add
+	 */
+	@Override
+	public void addTicket(ITicket ticket) {
+		String departure = ticket.getDeparture();
+		String destination = ticket.getDestination();
+	    Double price = ticket.getPrice();
+		try {
+			if (departure == null) {
+				graph.insertVertex(departure);
+			} else if (destination == null) {
+				graph.insertVertex(destination);
+			}
+			graph.insertEdge(departure, destination, price);
+		} catch (Exception e) {
+			// Do nothing
+		}
 	}
 	
     /**
@@ -15,7 +51,6 @@ public class TicketBackend implements ITicketBackend {
      * @param departure departure of the journey
      * @return true when the departure exists
      */
-	@SuppressWarnings("unchecked")
 	@Override
     public boolean searchByDeparture(String departure) {
 		return graph.containsVertex(departure);
@@ -27,7 +62,6 @@ public class TicketBackend implements ITicketBackend {
      * @param destination destination of the journey
      * @return true when the departure exists
      */
-	@SuppressWarnings("unchecked")
 	@Override
     public boolean searchByDestination(String destination) {
 		return graph.containsVertex(destination);
@@ -41,7 +75,6 @@ public class TicketBackend implements ITicketBackend {
      * @param destination destination of the journey
      * @return true if there is a path
      */
-	@SuppressWarnings("unchecked")
 	@Override
     public boolean pathFound(String departure, String destination) {
 		try {
@@ -59,10 +92,15 @@ public class TicketBackend implements ITicketBackend {
      * @param destination destination of the journey
      * @return List List of Ticket for the cheapest path
      */
-	@SuppressWarnings("unchecked")
 	@Override
     public List<ITicket> getCheapestPath(String departure, String destination) {
-		return graph.cheapestPath(departure, destination);
+		List<ITicket> cheapestPath = null;
+		try {
+			cheapestPath = graph.cheapestPath(departure, destination);
+		} catch (NoSuchElementException e) {
+			// do nothing
+		}
+		return cheapestPath;
 	}
 
     /**
@@ -72,9 +110,15 @@ public class TicketBackend implements ITicketBackend {
      * @param destination destination of the journey
      * @return List List of Ticket for the least transfer path
      */
-	@SuppressWarnings("unchecked")
 	@Override
     public List<ITicket> getLeastTransfer(String departure, String destination) {
-		return graph.leastTransferPath(departure, destination);
+		List<ITicket> leastTransferPath = null;
+		try {
+		    leastTransferPath = graph.leastTransferPath(departure, destination);
+		} catch (NoSuchElementException e) {
+			// do nothing
+		}
+		return leastTransferPath;
 	}
+
 }

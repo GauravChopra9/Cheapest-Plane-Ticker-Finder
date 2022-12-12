@@ -1,6 +1,14 @@
 import java.util.List;
 
 public interface ITicketBackend {
+	
+	/**
+	 * Adds a new ticket to the backend's database and is stored in the graph internally
+	 * 
+	 * @param ticket the ticket to add
+	 */
+	public void addTicket(ITicket ticket);
+	
     /**
      * Search through all the stops in the graph and return true if it has given departure
      * 
@@ -38,7 +46,7 @@ public interface ITicketBackend {
 
     /**
      * Search the graph and return the list of the paths which are cheapest top three
-     *
+     * 
      * @param departure departure of the journey
      * @param destination destination of the journey
      * @return List List of Ticket for the least transfer path
