@@ -7,7 +7,7 @@ public class FlightMapper {
     public static void main(String[] args) throws FileNotFoundException {
         ITicketLoader ticketLoader = new TicketLoader();
 	// load the flight tickets from the data file
-	List<ITicket> ticketList = ticketLoader.loadTickets(TicketDOT.gv);
+	List<ITicket> ticketList = ticketLoader.loadTickets("TicketDOT.gv");
 	// instantiate the back-end
 	ITicketBackend backend = new TicketBackend(new FlightTicketGraph());
 	// add all the tickets into the back-end
@@ -18,7 +18,7 @@ public class FlightMapper {
 	Scanner userInputScanner = new Scanner(System.in);
         // instantiate the front-end and pass references to the scanner
 	// and back-end to it
-	ITicketFrontend frontend = new TicketFrontend(userInputScanner, backend);
+	ITicketFrontend frontend = new TicketFrontend(userInputScanner, backend, ticketLoader);
 	// start the input loop of the front end
 	frontend.runCommandLoop();
     }
