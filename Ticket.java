@@ -7,8 +7,8 @@
 public class Ticket implements ITicket{
   String departure;
   String destination;
-  String price;
-  public Ticket(String departure, String destination, String price) {
+  Double price;
+  public Ticket(String departure, String destination, Double price) {
     this.departure = departure;
     this.destination = destination;
     this.price = price;
@@ -24,13 +24,13 @@ public class Ticket implements ITicket{
     return this.destination;
   }
   @Override
-  public String getPrice() {
+  public Double getPrice() {
     return this.price;
   }
 
   public String toString() {
     return "[ Departure: " + this.getDeparture() + ", Destination: " + this.getDestination() + ", Price: " + this.getPrice() + " ]";
   }
-
 }
+
 

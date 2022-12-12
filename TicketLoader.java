@@ -53,7 +53,7 @@ public class TicketLoader implements ITicketLoader {
             price = priceMatcher.group(); 
           }
           // add the ticket to the list
-          ticketList.add(new Ticket(departure, destination, price));
+          ticketList.add(new Ticket(departure, destination, Double.parseDouble(price)));
         }
       }
     } catch (IOException e) {
@@ -75,3 +75,4 @@ public class TicketLoader implements ITicketLoader {
     return isDOT || isGV;
   }
 }
+

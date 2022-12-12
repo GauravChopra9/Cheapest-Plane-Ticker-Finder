@@ -6,21 +6,21 @@
 public interface ITicket {
 
     /**
-     * Returns the price of the ticket.
-     * @return name of the ticket
+     * Returns  the departure name of this ticket
+     * @return departure name of plane ticket
      */
-    String getPrice();
-
+    String getDeparture();
+    
     /**
      * Returns a string that contains the destination of the ticket
      * as a single string
      * @return destination as single string
      */
     String getDestination();
-
+   
     /**
-     * Returns  the departure name of this ticket
-     * @return departure name of plane ticket
+     * Returns the price of the ticket.
+     * @return name of the ticket
      */
-    String getDeparture();
+    Double getPrice();
 }

@@ -99,9 +99,9 @@ public class DataWranglerTests {
    */
   @Test
   public void test1() {
-    Ticket tick1 = new Ticket("Miami, FL (Metropolitan Area)", "Rochester, NY", "151.46");
-    Ticket tick2 = new Ticket("Atlanta, GA (Metropolitan Area)", "Kansas City, MO", "172.83");
-    Ticket tick3 = new Ticket("Los Angeles, CA (Metropolitan Area)", "Salt Lake City, UT","135.24");
+    Ticket tick1 = new Ticket("Miami, FL (Metropolitan Area)", "Rochester, NY", 151.46);
+    Ticket tick2 = new Ticket("Atlanta, GA (Metropolitan Area)", "Kansas City, MO", 172.83);
+    Ticket tick3 = new Ticket("Los Angeles, CA (Metropolitan Area)", "Salt Lake City, UT", 135.24);
 
     // test getDeparture
     assertEquals(tick1.getDeparture(),"Miami, FL (Metropolitan Area)");
@@ -112,9 +112,9 @@ public class DataWranglerTests {
     assertEquals(tick2.getDestination(),"Kansas City, MO");
     assertEquals(tick3.getDestination(),"Salt Lake City, UT");
     // test getPrice
-    assertEquals(tick1.getPrice(),"151.46");
-    assertEquals(tick2.getPrice(),"172.83");
-    assertEquals(tick3.getPrice(),"135.24");
+    assertEquals(tick1.getPrice(),151.46);
+    assertEquals(tick2.getPrice(),172.83);
+    assertEquals(tick3.getPrice(),135.24);
   }
   
   /**
@@ -201,9 +201,9 @@ public class DataWranglerTests {
       String toMatch = dotList.get(i+1);// dotList index offset by 1 because of the opening Digraph G { line
       // make sure that each line was extracted correctly into the ticket
       assertTrue(toMatch.contains(ticket.getDeparture())&&toMatch.contains(ticket.getDestination())
-          &&toMatch.contains(ticket.getPrice()));
+          &&toMatch.contains(ticket.getPrice().toString()));
     }
   }
-  
 }
+
 
