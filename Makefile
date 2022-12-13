@@ -5,7 +5,7 @@ run: FlightMapper.class
 
 FlightMapper.class: FlightMapper.java TicketLoader.class TicketBackend.class FlightTicketGraph.class TicketFrontend.class TicketDOT.gv
 	javac FlightMapper.java
-
+	
 runTests: runBackendDeveloperTests runFrontendDeveloperTests runDataWranglerTests runAlgorithmEngineerTests
 
 

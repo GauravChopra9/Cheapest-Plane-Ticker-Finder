@@ -135,4 +135,89 @@ class AlgorithmEngineerTests {
 		assertTrue(checkForLeastTransferPath);
 
 	}
+
+	@Test
+	public void integrationTest1() {
+		FlightTicketGraph<String, Integer> integrationTest1Cities = new FlightTicketGraph<>();
+		integrationTest1Cities.insertVertex("New York");
+		integrationTest1Cities.insertVertex("Los Angeles");
+		integrationTest1Cities.insertVertex("San Francisco");
+		integrationTest1Cities.insertVertex("Seattle");
+		integrationTest1Cities.insertVertex("San Diego");
+		integrationTest1Cities.insertEdge("New York", "San Diego", 1);
+		integrationTest1Cities.insertEdge("Los Angeles", "Seattle", 3);
+		integrationTest1Cities.insertEdge("San Francisco", "Seattle", 1);
+		integrationTest1Cities.insertEdge("San Diego", "San Francisco", 2);
+		integrationTest1Cities.insertEdge("New York", "San Francisco", 5);
+		integrationTest1Cities.insertEdge("Seattle", "San Diego", 5);
+		integrationTest1Cities.insertEdge("Seattle", "New York", 3);
+		integrationTest1Cities.insertEdge("Los Angeles", "New York", 2);
+		integrationTest1Cities.insertEdge("Los Angeles", "San Francisco", 1);
+
+		// Testing the cheapestPath() and leastTransferPath() from New York to San Francisco
+		assertTrue(integrationTest1Cities.cheapestPath("New York", "San Francisco").toString()
+				.equals("[(New York --> San Diego), (San Diego --> San Francisco)]"));
+		assertTrue(integrationTest1Cities.getCheapestPathCost("New York", "San Francisco") == 3.0);
+		assertTrue(integrationTest1Cities.leastTransferPath("New York", "San Francisco").toString()
+				.equals("[(New York --> San Francisco)]"));
+		assertTrue(integrationTest1Cities.getLeastTransferPathCost("New York", "San Francisco") == 5.0);
+
+		// Checking with a vertex that does not exist
+		boolean checkForInvalid = false;
+		try {
+			integrationTest1Cities.cheapestPath("New York", "Chicago");
+		} catch (NoSuchElementException excpt) {
+			checkForInvalid = true;
+		} catch (Exception expct) {
+			checkForInvalid = false;
+		}
+
+		assertTrue(checkForInvalid);
+
+	}
+
+	@Test
+	public void integrationTest2() {
+		FlightTicketGraph<String, Integer> integrationTest2Cities = new FlightTicketGraph<>();
+		integrationTest2Cities.insertVertex("New York");
+		integrationTest2Cities.insertVertex("Los Angeles");
+		integrationTest2Cities.insertVertex("San Francisco");
+		integrationTest2Cities.insertVertex("Seattle");
+		integrationTest2Cities.insertVertex("San Diego");
+		integrationTest2Cities.insertEdge("New York", "San Diego", 1);
+		integrationTest2Cities.insertEdge("Los Angeles", "Seattle", 3);
+		integrationTest2Cities.insertEdge("San Francisco", "Seattle", 1);
+		integrationTest2Cities.insertEdge("San Diego", "San Francisco", 2);
+		integrationTest2Cities.insertEdge("New York", "San Francisco", 5);
+		integrationTest2Cities.insertEdge("Seattle", "San Diego", 5);
+		integrationTest2Cities.insertEdge("Seattle", "New York", 3);
+		integrationTest2Cities.insertEdge("Los Angeles", "New York", 2);
+		integrationTest2Cities.insertEdge("Los Angeles", "San Francisco", 1);
+
+		// Testing the cheapestPath() and leastTransferPath() from Los Angeles to Seattle
+		assertTrue(integrationTest2Cities.cheapestPath("Los Angeles", "Seattle").toString()
+				.equals("[(Los Angeles --> San Francisco), (San Francisco --> Seattle)]"));
+		assertTrue(integrationTest2Cities.getCheapestPathCost("Los Angeles", "Seattle") == 2.0);
+		assertTrue(integrationTest2Cities.leastTransferPath("Los Angeles", "Seattle").toString()
+				.equals("[(Los Angeles --> Seattle)]"));
+		assertTrue(integrationTest2Cities.getLeastTransferPathCost("Los Angeles", "Seattle") == 3.0);
+
+		// Testing the cheapestPath() and leastTransferPath(0 from New York to Seattle
+		assertTrue(integrationTest2Cities.cheapestPath("New York", "Seattle").toString()
+				.equals("[(New York --> San Diego), (San Diego --> San Francisco), (San Francisco --> Seattle)]"));
+		assertTrue(integrationTest2Cities.getCheapestPathCost("New York", "Seattle") == 4.0);
+		assertTrue(integrationTest2Cities.leastTransferPath("New York", "Seattle").toString()
+				.equals("[(New York --> San Francisco), (San Francisco --> Seattle)]"));
+		assertTrue(integrationTest2Cities.getLeastTransferPathCost("New York", "Seattle") == 6.0);
+	}
+
+	@Test
+	public void codeReviewOfFrontendDeveloper1() {
+		
+	}
+
+	@Test
+	public void codeReviewOfFrontendDeveloper2() {
+
+	}
 }
