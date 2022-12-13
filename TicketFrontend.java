@@ -84,8 +84,10 @@ public class TicketFrontend implements ITicketFrontEnd {
             else if (input == 3) {
                 // Requesting for Departure and Arrival locations
                 System.out.println(indent + "Please Enter Departure Location: ");
-                System.out.println(indent + "Please Enter Arrival Location");
                 String departure = userInput.nextLine();
+                if (departure.isBlank() == false) {
+                    System.out.println(indent + "Please Enter Arrival Location");
+                }
                 String destination = userInput.nextLine();
 
                 // Accounting for Invalid Cases
@@ -146,7 +148,7 @@ public class TicketFrontend implements ITicketFrontEnd {
         int count = 0;
         // loading all the tickets from the dot file into an allTickets List
         try {
-            allTickets = loader.loadTickets("");
+            allTickets = loader.loadTickets("TicketDOT.gv");
         }
 
         catch(FileNotFoundException f) {
@@ -171,7 +173,7 @@ public class TicketFrontend implements ITicketFrontEnd {
         int count = 0;
         // loading all the tickets from the dot file into an allTickets List
         try {
-            allTickets = loader.loadTickets("");
+            allTickets = loader.loadTickets("TicketDOT.gv");
         }
 
         catch(FileNotFoundException f) {

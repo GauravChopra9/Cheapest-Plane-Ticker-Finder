@@ -107,10 +107,10 @@ class FrontendDeveloperTest {
         output = test.checkOutput();
 
         // checking if the output is as expected with the given input
-        assertTrue(output.contains("1) Ticket from Madison to Boston is 1000 dollars\n" +
-                "2) Ticket from New York to Los Angeles is 2000 dollars\n" +
-                "3) Ticket from Atlanta to New York is 300 dollars\n" +
-                "4) Ticket from Atlanta to Los Angeles is 2000 dollars"));
+        assertTrue(output.contains("1) Ticket from Madison to Boston is 1000.0 dollars\n" +
+                "2) Ticket from New York to Los Angeles is 2000.0 dollars\n" +
+                "3) Ticket from Atlanta to New York is 300.0 dollars\n" +
+                "4) Ticket from Atlanta to Los Angeles is 2000.0 dollars"));
         assertTrue(output.contains("Goodbye!"));
     }
 

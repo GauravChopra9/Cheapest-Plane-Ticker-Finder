@@ -3,7 +3,7 @@
  */
 public class FDTicket implements ITicket {
     // Attributes of the ticket objects
-    String price;
+    Double  price;
     String destination;
     String departure;
     String genre;
@@ -11,7 +11,7 @@ public class FDTicket implements ITicket {
     /**
      * Constructor which creates the ticket objects
      */
-    public FDTicket(String price, String departure, String destination) {
+    public FDTicket(Double  price, String departure, String destination) {
         this.price = price;
         this.destination = destination;
         this.departure = departure;
@@ -21,7 +21,7 @@ public class FDTicket implements ITicket {
      * Getter method for the price of the ticket
      */
     @Override
-    public String getPrice() {
+    public Double getPrice() {
         return this.price;
     }
 
