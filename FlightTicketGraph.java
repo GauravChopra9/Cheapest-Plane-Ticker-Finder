@@ -50,8 +50,8 @@ public class FlightTicketGraph<NodeType, EdgeType extends Number> implements Fli
 		}
 
 		@Override
-		public String getPrice() {
-			return this.weight.toString();
+		public Double getPrice() {
+			return this.weight.doubleValue();
 		}
 
 		@Override
