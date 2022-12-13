@@ -38,8 +38,8 @@ public class TicketLoader implements ITicketLoader {
           String destination = "";
           String price = "";
           // use regex to get the departure/destination city
-          Pattern cityPattern = Pattern.compile("[A-Z]\\D+[A-Z][A-Z]"); // regex pattern for finding the departure/destination
-          Matcher cityMatcher = cityPattern.matcher(line);
+	  Pattern cityPattern = Pattern.compile("\"[A-Z]\\D+[A-Z][A-Z]\\D+\""); // regex pattern for finding the departure/destination
+	  Matcher cityMatcher = cityPattern.matcher(line);
           while (cityMatcher.find()) {
             // split by the arrow symbol
             String[] cities = cityMatcher.group().split("\" -> \"");
@@ -53,8 +53,8 @@ public class TicketLoader implements ITicketLoader {
             price = priceMatcher.group(); 
           }
           // add the ticket to the list
-          ticketList.add(new Ticket(departure, destination, Double.parseDouble(price)));
-        }
+          ticketList.add(new Ticket(departure.replace("\"", ""), destination.replace("\"", ""), Double.parseDouble(price)));
+	}
       }
     } catch (IOException e) {
       e.printStackTrace();
