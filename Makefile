@@ -44,7 +44,7 @@ runFrontendDeveloperTests: FrontendDeveloperTest.class
 	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=FrontendDeveloperTest
 FrontendDeveloperTest.class: FrontendDeveloperTest.java TicketFrontend.class TicketBackendFD.class TicketLoaderFD.class TextUITester.class FDTicket.class
 	javac -cp .:junit5.jar FrontendDeveloperTest.java
-TicketFrontend.class: TicketFrontend.java FDTicket.class
+TicketFrontend.class: TicketFrontend.java
 	javac TicketFrontend.java
 TicketBackendFD.class: TicketBackendFD.java FDTicket.class
 	javac TicketBackendFD.java
