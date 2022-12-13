@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.NoSuchElementException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.Scanner;
 
 class AlgorithmEngineerTests {
 
@@ -213,11 +214,32 @@ class AlgorithmEngineerTests {
 
 	@Test
 	public void codeReviewOfFrontendDeveloper1() {
-		
+		Scanner scan = new Scanner(System.in);
+		TextUITester test = new TextUITester("");
+		TicketBackendFD backend = new TicketBackendFD();
+		TicketLoader loader = new TicketLoader();
+		TicketFrontend frontend = new TicketFrontend(scan, backend, loader);
+		frontend.displayMainMenu();
+		String output = test.checkOutput();
+
+		assertTrue(output.contains("You are in the Main Menu:"));
+		assertTrue(output.contains("1) List All Locations"));
+		assertTrue(output.contains("2) List All Tickets"));
+        	assertTrue(output.contains("3) Chose Departure and Arrival Location"));
+        	assertTrue(output.contains("4) Exit Application"));	
 	}
 
 	@Test
 	public void codeReviewOfFrontendDeveloper2() {
+		Scanner scan = new Scanner(System.in);
+                TextUITester test = new TextUITester("");
+                TicketBackendFD backend = new TicketBackendFD();
+                TicketLoader loader = new TicketLoader();
+                TicketFrontend frontend = new TicketFrontend(scan, backend, loader);
+                frontend.displayMainMenu();
+                String output = test.checkOutput();
 
+		assertTrue(output.contains("1) Madison\n2) Boston\n3) New York\n4) Los Angeles\n5) Atlanta"));
+        	assertTrue(output.contains("Goodbye!"));
 	}
 }
