@@ -34,14 +34,17 @@ public class TicketBackend implements ITicketBackend {
 		String destination = ticket.getDestination();
 	    Double price = ticket.getPrice();
 		try {
-			if (departure == null) {
+			if (!graph.containsVertex(departure)) {
 				graph.insertVertex(departure);
-			} else if (destination == null) {
+			}
+			
+			if (!graph.containsVertex(destination)) {
 				graph.insertVertex(destination);
 			}
 			graph.insertEdge(departure, destination, price);
 		} catch (Exception e) {
 			// Do nothing
+			e.printStackTrace();
 		}
 	}
 	
