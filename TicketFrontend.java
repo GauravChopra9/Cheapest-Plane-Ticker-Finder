@@ -148,7 +148,7 @@ public class TicketFrontend implements ITicketFrontEnd {
         int count = 0;
         // loading all the tickets from the dot file into an allTickets List
         try {
-            allTickets = loader.loadTickets("");
+            allTickets = loader.loadTickets("TicketDOT.gv");
         }
 
         catch(FileNotFoundException f) {
@@ -173,7 +173,7 @@ public class TicketFrontend implements ITicketFrontEnd {
         int count = 0;
         // loading all the tickets from the dot file into an allTickets List
         try {
-            allTickets = loader.loadTickets("");
+            allTickets = loader.loadTickets("TicketDOT.gv");
         }
 
         catch(FileNotFoundException f) {
