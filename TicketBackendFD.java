@@ -6,6 +6,11 @@ import java.util.List;
  */
 public class TicketBackendFD implements ITicketBackend {
 
+
+	public void addTicket(ITicket ticket){
+		// Something Happenes
+	}
+
     public boolean searchByDeparture(String name) {
         return true;
     }
@@ -20,17 +25,17 @@ public class TicketBackendFD implements ITicketBackend {
 
     public List<ITicket> getCheapestPath(String departure, String destination) {
         List<ITicket> path = new ArrayList<>();
-        path.add(new FDTicket("400", "Madison", "Chicago"));
-        path.add(new FDTicket("500", "Chicago", "New York"));
-        path.add(new FDTicket("200", "New York", "Boston"));
+        path.add(new FDTicket(400.0, "Madison", "Chicago"));
+        path.add(new FDTicket(500.0, "Chicago", "New York"));
+        path.add(new FDTicket(200.0, "New York", "Boston"));
         return path;
     }
 
     public List<ITicket> getLeastTransfer(String departure, String destination) {
         List<ITicket> path = new ArrayList<>();
-        path.add(new FDTicket("400", "Madison", "Chicago"));
-        path.add(new FDTicket("500", "Chicago", "Seattle"));
-        path.add(new FDTicket("200", "Seattle", "Boston"));
+        path.add(new FDTicket(400.0, "Madison", "Chicago"));
+        path.add(new FDTicket(500.0, "Chicago", "Seattle"));
+        path.add(new FDTicket(200.0, "Seattle", "Boston"));
         return path;
     }
 }
