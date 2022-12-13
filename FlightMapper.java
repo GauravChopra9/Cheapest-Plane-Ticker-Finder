@@ -9,7 +9,7 @@ public class FlightMapper {
 	// load the flight tickets from the data file
 	List<ITicket> ticketList = ticketLoader.loadTickets("TicketDOT.gv");
 	// instantiate the back-end
-	ITicketBackend backend = new TicketBackend(new FlightTicketGraph());
+	ITicketBackend backend = new TicketBackend(new FlightTicketGraph<String, Double>());
 	// add all the tickets into the back-end
 	for (ITicket ticket: ticketList) {
 	    backend.addTicket(ticket);
@@ -18,7 +18,7 @@ public class FlightMapper {
 	Scanner userInputScanner = new Scanner(System.in);
         // instantiate the front-end and pass references to the scanner
 	// and back-end to it
-	ITicketFrontend frontend = new TicketFrontend(userInputScanner, backend, ticketLoader);
+	ITicketFrontEnd frontend = new TicketFrontend(userInputScanner, backend, ticketLoader);
 	// start the input loop of the front end
 	frontend.runCommandLoop();
     }

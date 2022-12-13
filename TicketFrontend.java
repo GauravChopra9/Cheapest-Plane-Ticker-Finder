@@ -130,7 +130,7 @@ public class TicketFrontend implements ITicketFrontEnd {
     @Override
     public String displayTicket(ITicket ticket) {
         // get the name, publisher, publish year and genre for all the games in the list
-        String price= ticket.getPrice();
+        Double price= ticket.getPrice();
         String destination = ticket.getDestination();
         String departure = ticket.getDeparture();
         String t =  "Ticket from " + departure + " to " + destination + " is " + price + " dollars";
