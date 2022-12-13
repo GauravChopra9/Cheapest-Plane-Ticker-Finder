@@ -51,8 +51,8 @@ public class FlightTicketBD<NodeType, EdgeType extends Number> implements Flight
 	     * @return price of the ticket
 	     */
 		@Override
-		public String getPrice() {
-			return price.toString();
+		public Double getPrice() {
+			return price.doubleValue();
 		}
 
 	    /**
