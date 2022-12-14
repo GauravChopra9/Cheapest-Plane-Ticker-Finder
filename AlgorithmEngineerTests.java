@@ -214,8 +214,8 @@ class AlgorithmEngineerTests {
 
 	@Test
 	public void codeReviewOfFrontendDeveloper1() {
-		Scanner scan = new Scanner(System.in);
 		TextUITester test = new TextUITester("");
+		Scanner scan = new Scanner(System.in);
 		TicketBackendFD backend = new TicketBackendFD();
 		TicketLoader loader = new TicketLoader();
 		TicketFrontend frontend = new TicketFrontend(scan, backend, loader);
@@ -231,15 +231,18 @@ class AlgorithmEngineerTests {
 
 	@Test
 	public void codeReviewOfFrontendDeveloper2() {
+                TextUITester test = new TextUITester("1\n4\n");
 		Scanner scan = new Scanner(System.in);
-                TextUITester test = new TextUITester("");
                 TicketBackendFD backend = new TicketBackendFD();
-                TicketLoader loader = new TicketLoader();
+                TicketLoaderFD loader = new TicketLoaderFD();
                 TicketFrontend frontend = new TicketFrontend(scan, backend, loader);
-                frontend.displayMainMenu();
+                frontend.runCommandLoop();
                 String output = test.checkOutput();
 
-		assertTrue(output.contains("1) Madison\n2) Boston\n3) New York\n4) Los Angeles\n5) Atlanta"));
-        	assertTrue(output.contains("Goodbye!"));
+		assertTrue(output.contains("Welcome to the Plain Ticket Application!"));
+		assertTrue(output.contains("1) Madison"));
+		assertTrue(output.contains("2) Boston"));
+        	assertTrue(output.contains("3) New York"));
+		assertTrue(output.contains("Goodbye!"));
 	}
 }
