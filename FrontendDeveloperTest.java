@@ -59,7 +59,7 @@ class FrontendDeveloperTest {
         output = test.checkOutput();
 
         // check the beginning message of command loop
-        assertEquals(output.substring(0, 40), "Welcome to the Plain Ticket Application!");
+        assertEquals(output.substring(0, 40), "Welcome to the Plane Ticket Application!");
         assertTrue(output.contains("x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x"));
 
         // check the output if enter a string instead of a number between 1 and 4
@@ -131,15 +131,15 @@ class FrontendDeveloperTest {
 
         // Checking if the output is as expected for the given valid input
         assertTrue(output.contains("Following is the list of tickets comprising of the cheapest path from Madison to Boston:"));
-        assertTrue(output.contains("Ticket from Madison to Chicago\n" +
-                "Ticket from Chicago to New York\n" +
-                "Ticket from New York to Boston"));
+        assertTrue(output.contains("Ticket from Madison to Chicago (400.0$)\n" +
+                "Ticket from Chicago to New York (500.0$)\n" +
+                "Ticket from New York to Boston (200.0$)"));
         assertTrue(output.contains("\nFollowing is the list of tickets comprising of the path with least transfers"));
-        assertTrue(output.contains("Ticket from Madison to Chicago\n" +
-                "Ticket from Chicago to Seattle\n" +
-                "Ticket from Seattle to Boston"));
+        System.out.println(output);
+        assertTrue(output.contains("Ticket from Madison to Chicago (400.0$)\n" +
+                "Ticket from Chicago to Seattle (500.0$)\n" +
+                "Ticket from Seattle to Boston (200.0$)"));
         assertTrue(output.contains("Goodbye!"));
-
         // run the command loop and store the System.out output
         test = new TextUITester("3\n   \n\n4\n");
         scan = new Scanner(System.in);
@@ -153,6 +153,3 @@ class FrontendDeveloperTest {
         assertTrue(!output.contains("\nFollowing is the list of tickets comprising of the path with least transfers"));
     }
 }
-
-
-

@@ -42,7 +42,7 @@ public class TicketFrontend implements ITicketFrontEnd {
     @Override
     public void runCommandLoop() {
         // Printing the beginning statements of the application
-        System.out.println("Welcome to the Plain Ticket Application!");
+        System.out.println("Welcome to the Plane Ticket Application!");
         System.out.println("x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x");
         // boolean variable which controls when the while loop ends
         boolean validUser = true;
@@ -244,7 +244,7 @@ public class TicketFrontend implements ITicketFrontEnd {
             for (int i = 0; i < cheapestList.size(); i++) {
                 String ticket = displayTicket(cheapestList.get(i));
                 System.out.println("Ticket from " + cheapestList.get(i).getDeparture()
-                + " to " + cheapestList.get(i).getDestination());
+                + " to " + cheapestList.get(i).getDestination() + " (" + cheapestList.get(i).getPrice()+"$)");
                 cheapestPath = cheapestPath + ticket + "\n";
             }
         }
@@ -276,7 +276,7 @@ public class TicketFrontend implements ITicketFrontEnd {
             for (int i = 0; i < leastTransfer.size(); i++) {
                 String ticket = displayTicket(leastTransfer.get(i));
                 System.out.println("Ticket from " + leastTransfer.get(i).getDeparture()
-                        + " to " + leastTransfer.get(i).getDestination());
+                        + " to " + leastTransfer.get(i).getDestination()+ " (" + leastTransfer.get(i).getPrice()+"$)");
                 leastTransferPath = leastTransferPath + ticket + "\n";
             }
         }
